@@ -1,34 +1,34 @@
 # ubuntu
 
-    ## rc.local
+  ## rc.local
 
-        sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service
+    sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service
 
-        sudo vi /etc/systemd/system/rc-local.service
+    sudo vi /etc/systemd/system/rc-local.service
 
-            [Install]
-            WantedBy=multi-user.target
-            Alias=rc-local.service
+      [Install]
+      WantedBy=multi-user.target
+      Alias=rc-local.service
 
-        sudo vi /etc/rc.local
+    sudo vi /etc/rc.local
 
-            #!/bin/sh -e
-            #
-            # rc.local
-            #
-            # This script is executed at the end of each multiuser runlevel.
-            # Make sure that the script will "exit 0" on success or any other
-            # value on error.
-            #
-            # In order to enable or disable this script just change the execution
-            # bits.
-            #
-            # By default this script does nothing.
+      #!/bin/sh -e
+      #
+      # rc.local
+      #
+      # This script is executed at the end of each multiuser runlevel.
+      # Make sure that the script will "exit 0" on success or any other
+      # value on error.
+      #
+      # In order to enable or disable this script just change the execution
+      # bits.
+      #
+      # By default this script does nothing.
 
-            exit 0
+      exit 0
 
-        sudo chmod 0755 /etc/rc.local
-        sudo systemctl daemon-reload
+    sudo chmod 0755 /etc/rc.local
+    sudo systemctl daemon-reload
 
 # centos
 
