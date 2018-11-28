@@ -29,10 +29,10 @@ rc.local
 
     exit 0
 
-  sudo chmod 0755 /etc/rc.local
+  sudo chmod 0755 /etc/rc.local  
   sudo systemctl daemon-reload
 
-  sudo systemctl enable rc-local
+  sudo systemctl enable rc-local  
   sudo systemctl restart rc-local
 
 
@@ -46,16 +46,16 @@ python
 ubuntu
 ------
 
-  sudo apt install -y libbz2-dev libdb-dev libexpat1-dev libffi-dev libgdbm-dev liblzma-dev libncurses5-dev libpcap-dev libreadline-dev libsqlite3-dev libssl-dev
+  sudo apt install -y libbz2-dev libdb-dev libexpat1-dev libffi-dev libgdbm-dev liblzma-dev libncurses5-dev libpcap-dev libreadline-dev libsqlite3-dev libssl-dev  
   sudo apt install -y tk-dev uuid-dev xz-utils zlib1g-dev
 
-  ./configure --prefix=/opt/python --enable-optimizations --enable-shared
+  ./configure --prefix=/opt/python --enable-optimizations --enable-shared  
   make install
 
 centos
 ------
 
-  yum install -y libdb-devel libffi-devel libpcap-devel libuuid-devel
+  yum install -y libdb-devel libffi-devel libpcap-devel libuuid-devel  
   yum install -y bzip2-devel expat-devel gdbm-devel ncurses-devel readline-devel sqlite-devel openssl-devel tk-devel xz xz-devel zlib-devel
 
 
@@ -65,11 +65,11 @@ apache
 ubuntu
 ------
 
-  sudo apt install -y apache2 apache2-dev
+  sudo apt install -y apache2 apache2-dev  
   sudo apt install -y php php-mysql php-xml libapache2-mod-php
 
-  sudo a2enmod proxy
-  sudo a2enmod rewrite
+  sudo a2enmod proxy  
+  sudo a2enmod rewrite  
   sudo a2enmod ssl
 
   sudo systemctl restart apache2
@@ -131,7 +131,7 @@ ubuntu
 
     from app import app as application
 
-  sudo a2enmod wsgi
+  sudo a2enmod wsgi  
   sudo a2ensite wsgi
 
   sudo systemctl restart apache2
@@ -165,7 +165,7 @@ ubuntu
     browseable = yes
     valid users = user
 
-  systemctl enable smb.service
+  systemctl enable smb.service  
   systemctl restart smb.service
 
 centos
@@ -173,7 +173,7 @@ centos
 
   yum install -y samba
 
-  systemctl disable firewalld.service
+  systemctl disable firewalld.service  
   systemctl stop firewalld.service
 
 
@@ -185,7 +185,7 @@ ubuntu
 
   sudo apt install -y mariadb-server
 
-  sudo systemctl enable mariadb
+  sudo systemctl enable mariadb  
   sudo systemctl restart mariadb
 
   sudo mysql -uroot
