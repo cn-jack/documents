@@ -52,6 +52,8 @@ ubuntu
   ./configure --prefix=/opt/python --enable-optimizations --enable-shared  
   make install
 
+  sudo cp /opt/python/lib/libpython*.so.* /usr/lib
+
 centos
 ------
 
