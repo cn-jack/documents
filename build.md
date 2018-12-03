@@ -125,6 +125,23 @@ ubuntu
         </Directory>
     </VirtualHost>
 
+  sudo vi /etc/apache2/sites-available/default-ssl.conf
+
+    <VirtualHost _default_:443>
+        ServerName 127.0.0.1
+
+        WSGIDaemonProcess myapp443 user=user group=user home=/build/www/myapp python-path=/build/www/myapp
+        WSGIScriptAlias / /build/www/myapp/app.wsgi
+
+        <Directory /build/www/myapp>
+            WSGIProcessGroup myapp443
+            WSGIApplicationGroup %{GLOBAL}
+
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+
   vi /build/www/myapp/app.wsgi
 
     import sys
