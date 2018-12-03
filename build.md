@@ -151,7 +151,8 @@ ubuntu
     from app import app as application
 
   sudo a2enmod wsgi  
-  sudo a2ensite wsgi
+  sudo a2ensite wsgi  
+  sudo a2ensite default-ssl
 
   sudo systemctl restart apache2
 
